@@ -41,59 +41,26 @@
           <p class="eyebrow">Join</p>
           <h1 class="page-title">For athletes and families</h1>
         </div>
-        <div class="contact-panel">
-          <form data-interest-form action="mailto:ahnahabes@gmail.com,costagirlswp@gmail.com?subject=Mira%20Costa%20Girls%20Water%20Polo%20Interest%20Form" method="post" enctype="text/plain">
-            <label>
-              Athlete name
-              <input type="text" name="Athlete name" autocomplete="name" placeholder="First and last name" />
-            </label>
-            <label>
-              Graduation year
-              <select name="Graduation year" data-grad-year></select>
-            </label>
-            <label>
-              Parent/guardian email
-              <input type="email" name="Parent/guardian email" autocomplete="email" placeholder="name@example.com" />
-            </label>
-            <label>
-              Playing experience
-              <textarea name="Playing experience" rows="4" placeholder="Club, swim background, or new to water polo"></textarea>
-            </label>
-            <button class="button primary" type="submit">Send interest form</button>
-          </form>
+        <div class="join-form-panel">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScWcl0efwnhHlZE_Wa2LwOQS1qioEbK3zMgSOJja6aWVsQJmw/viewform?embedded=true"
+            title="Mira Costa Incoming Players Information"
+            loading="lazy"
+          >
+            Loading...
+          </iframe>
+          <a
+            class="button primary"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScWcl0efwnhHlZE_Wa2LwOQS1qioEbK3zMgSOJja6aWVsQJmw/viewform"
+            target="_blank"
+            rel="noopener"
+          >
+            Open form in new tab
+          </a>
         </div>
       </section>
     </main>
 
     <script src="script.js?v=20260518-1"></script>
-    <script>
-      document.querySelector("[data-interest-form]")?.addEventListener(
-        "submit",
-        (event) => {
-          event.preventDefault();
-          event.stopImmediatePropagation();
-
-          const formData = new FormData(event.currentTarget);
-          const athleteName = formData.get("Athlete name")?.toString().trim() || "Not provided";
-          const graduationYear = formData.get("Graduation year")?.toString().trim() || "Not provided";
-          const parentEmail = formData.get("Parent/guardian email")?.toString().trim() || "Not provided";
-          const experience = formData.get("Playing experience")?.toString().trim() || "Not provided";
-          const subject = `Mira Costa Girls Water Polo Interest Form - ${athleteName}`;
-          const body = [
-            "New Mira Costa Girls Water Polo interest form submission:",
-            "",
-            `Athlete name: ${athleteName}`,
-            `Graduation year: ${graduationYear}`,
-            `Parent/guardian email: ${parentEmail}`,
-            "",
-            "Playing experience:",
-            experience,
-          ].join("\n");
-
-          window.location.href = `mailto:ahnahabes@gmail.com,costagirlswp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        },
-        { capture: true }
-      );
-    </script>
   </body>
 </html>

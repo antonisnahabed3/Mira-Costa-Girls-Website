@@ -1511,6 +1511,25 @@ h3 {
   margin-top: 42px;
 }
 
+.join-form-panel {
+  display: grid;
+  gap: 18px;
+  max-width: 940px;
+  margin-top: 42px;
+}
+
+.join-form-panel iframe {
+  width: 100%;
+  min-height: 1120px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 18px 60px rgba(6, 39, 28, 0.08);
+}
+
+.join-form-panel .button {
+  justify-self: start;
+}
+
 form,
 .contact aside {
   border: 1px solid var(--line);
