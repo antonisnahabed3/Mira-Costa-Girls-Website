@@ -744,6 +744,7 @@ h3 {
 .forms-page,
 .gear-page,
 .new-player-page,
+.practice-page,
 .rosters,
 .schedule {
   background:
@@ -931,6 +932,66 @@ h3 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.practice-card {
+  min-height: 260px;
+  padding: clamp(24px, 4vw, 34px);
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 18px 60px rgba(6, 39, 28, 0.08);
+}
+
+.practice-card span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--gold-500);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.practice-card h2 {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.practice-card p,
+.practice-card li {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.practice-card p {
+  margin: 0 0 14px;
+}
+
+.practice-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.practice-note {
+  max-width: 780px;
+  margin: 28px 0 0;
+  color: var(--green-950);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-weight: 900;
 }
 
 .media-links {
@@ -1681,6 +1742,7 @@ textarea {
   .home-pathway,
   .coach-profile,
   .contact-grid,
+  .practice-grid,
   .roster-panel,
   .results-panel,
   .timeline,
