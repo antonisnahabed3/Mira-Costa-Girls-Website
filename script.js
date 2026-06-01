@@ -48,7 +48,7 @@ const rosters = {
       { cap: "3", last: "Bayiz", first: "Defne" },
       { cap: "4", last: "Brogan", first: "Anabelle" },
       { cap: "5", last: "Guttig", first: "Emma" },
-      { cap: "6", last: "McCarthy", first: "Maddy" },
+      { cap: "6", last: "MacCarthy O'Hea", first: "Madi" },
       { cap: "7", last: "Odell", first: "Emma" },
       { cap: "8", last: "Roisman", first: "Natalie" },
       { cap: "9", last: "Smith", first: "Sophia" },
