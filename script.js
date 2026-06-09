@@ -58,8 +58,8 @@ const rosters = {
 };
 const results = {
   "26/27 Game Schedule": [
+    { day: "Thursday", date: "11/19", opponent: "Notre Dame HS", location: "Notre Dame HS", time: "4/5pm", level: "V/JV" },
     { day: "Tuesday", date: "12/1", opponent: "Santa Monica", location: "Santa Monica HS", time: "", level: "" },
-    { day: "Fri-Sat", date: "12/3-12/4", opponent: "Mistletoe Tournament", location: "TBD", time: "", level: "V" },
     { day: "Thu-Sat", date: "12/10-12/12", opponent: "Villa Park Tournament", location: "TBD", time: "", level: "V" },
     { day: "Tuesday", date: "12/15/26", opponent: "El Segundo", location: "Mira Costa HS", time: "", level: "" },
     { day: "Tuesday", date: "1/5/27", opponent: "Palos Verdes", location: "Mira Costa HS", time: "", level: "" },
@@ -549,6 +549,19 @@ const renderResults = () => {
   const resultsTable = resultsBody.closest(".results-table");
 
   resultsTable?.classList.toggle("official-schedule", isOfficialSchedule);
+  if (isOfficialSchedule && scheduleView !== "past") {
+    resultsTitle.textContent = "TBD";
+    resultsRecord.textContent = "";
+    resultsHead.innerHTML = "";
+    resultsBody.innerHTML = "";
+    if (resultsTable) {
+      resultsTable.hidden = true;
+    }
+    return;
+  }
+  if (resultsTable) {
+    resultsTable.hidden = false;
+  }
   resultsTitle.innerHTML = isOfficialSchedule
     ? `${season} <span class="schedule-status">*Not yet final*</span>`
     : season;
