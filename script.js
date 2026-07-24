@@ -58,17 +58,23 @@ const rosters = {
 };
 const results = {
   "26/27 Game Schedule": [
-    { day: "Thursday", date: "11/19", opponent: "Notre Dame HS", location: "Notre Dame HS", time: "4/5pm", level: "V/JV" },
-    { day: "Tuesday", date: "12/1", opponent: "Santa Monica", location: "Santa Monica HS", time: "", level: "" },
-    { day: "Thu-Sat", date: "12/10-12/12", opponent: "Villa Park Tournament", location: "TBD", time: "", level: "V" },
-    { day: "Tuesday", date: "12/15/26", opponent: "El Segundo", location: "Mira Costa HS", time: "", level: "" },
-    { day: "Tuesday", date: "1/5/27", opponent: "Palos Verdes", location: "Mira Costa HS", time: "", level: "" },
-    { day: "Thursday", date: "1/7/27", opponent: "Redondo", location: "Redondo HS", time: "", level: "" },
-    { day: "Thursday", date: "1/14/27", opponent: "El Segundo", location: "ESAC", time: "", level: "" },
-    { day: "Fri-Sat", date: "1/15-1/16", opponent: "Oceanview Tournament", location: "TBD", time: "", level: "V" },
-    { day: "Tuesday", date: "1/19/27", opponent: "Santa Monica", location: "Mira Costa HS", time: "", level: "" },
-    { day: "Thursday", date: "1/21/27", opponent: "Palos Verdes", location: "Palos Verdes HS", time: "", level: "" },
-    { day: "Tuesday", date: "1/26/27", opponent: "Redondo", location: "Mira Costa HS", time: "", level: "" },
+    { day: "Thursday", date: "11/12/26", opponent: "Crescenta Valley HS", location: "Mira Costa HS", time: "3:30/4:30pm", level: "V/JV" },
+    { day: "Thursday", date: "11/19/26", opponent: "Notre Dame", location: "Notre Dame HS", time: "4/5pm", level: "V/JV" },
+    { day: "Fri-Sat", date: "11/20-11/21", opponent: "Bonita Tournament", location: "TBD", time: "TBD", level: "V" },
+    { day: "Monday", date: "11/30", opponent: "Arcadia", location: "Mira Costa HS", time: "4/5pm", level: "V/JV" },
+    { day: "Tuesday", date: "12/1", opponent: "Santa Monica", location: "Santa Monica HS", time: "3:30", level: "TBD" },
+    { day: "Thursday", date: "12/3", opponent: "Milikan", location: "Mira Costa HS", time: "3:30/4:30", level: "JV/V" },
+    { day: "Thu-Sat", date: "12/10-12/12", opponent: "Villa Park Tournament", location: "TBD", time: "TBD", level: "V" },
+    { day: "Tuesday", date: "12/15/26", opponent: "El Segundo", location: "Mira Costa HS", time: "3:30/4:30", level: "V/JV" },
+    { day: "Tuesday", date: "1/5/27", opponent: "Palos Verdes", location: "Mira Costa HS", time: "3:30/4:30", level: "V/JV" },
+    { day: "Thursday", date: "1/7/27", opponent: "Redondo", location: "Redondo HS", time: "3:30/4:30", level: "V/JV/FS" },
+    { day: "Thursday", date: "1/14/27", opponent: "El Segundo", location: "ESAC", time: "3:30/4:30", level: "V/JV" },
+    { day: "Fri-Sat", date: "1/15-1/16", opponent: "Oceanview Tournament", location: "TBD", time: "TBD", level: "V" },
+    { day: "Tuesday", date: "1/19/27", opponent: "Santa Monica", location: "Mira Costa HS", time: "3:30/4:30", level: "V/JV" },
+    { day: "Thursday", date: "1/21/27", opponent: "Palos Verdes", location: "Palos Verdes HS", time: "3:30/4:30", level: "V/JV" },
+    { day: "Fri-Sat", date: "1/22-1/23", opponent: "Lady Warrior FS Tournament", location: "Torrance Aquatic Center", time: "TBD", level: "FS" },
+    { day: "Tuesday", date: "1/26/27", opponent: "Redondo", location: "Mira Costa HS", time: "3:30/4:30", level: "V/JV" },
+    { day: "", date: "1/28-2/20", opponent: "CIF", location: "TBD", time: "TBD", level: "V" },
   ],
   "25/26 Season": [
     { opponent: "LB Wilson", score: "6-21", result: "Loss", level: "TBD" },
@@ -549,21 +555,11 @@ const renderResults = () => {
   const resultsTable = resultsBody.closest(".results-table");
 
   resultsTable?.classList.toggle("official-schedule", isOfficialSchedule);
-  if (isOfficialSchedule && scheduleView !== "past") {
-    resultsTitle.textContent = "TBD";
-    resultsRecord.textContent = "";
-    resultsHead.innerHTML = "";
-    resultsBody.innerHTML = "";
-    if (resultsTable) {
-      resultsTable.hidden = true;
-    }
-    return;
-  }
   if (resultsTable) {
     resultsTable.hidden = false;
   }
   resultsTitle.innerHTML = isOfficialSchedule
-    ? `${season} <span class="schedule-status">*Not yet final*</span>`
+    ? `${season} <span class="schedule-status">*Tentative*</span>`
     : season;
   resultsRecord.textContent = isOfficialSchedule ? "Highlighted games are home games" : "";
   resultsHead.innerHTML = isOfficialSchedule
